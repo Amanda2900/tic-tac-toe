@@ -5,7 +5,7 @@ const winningCombos = [
   [6, 7, 8], //bottom across
   [0, 3, 6], //left down
   [1, 4, 7], //center down
-  [3, 5, 8], //right down
+  [2, 5, 8], //right down
   [0, 4, 8], //diagonal l-r
   [2, 4, 6] //diagonal r-l
 ];
