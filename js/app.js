@@ -31,7 +31,7 @@ board.addEventListener('click', handleClick);
 init();
 
 function init() {
-  boardSquares = [null, null, null, null, null, null, null, null];
+  boardSquares = [null, null, null, null, null, null, null, null, null];
   turnOrder = 1; //1 is player X, -1 is player O
   winner = null; // will hold either 1, -1, or T for tie
 
@@ -39,7 +39,7 @@ function init() {
 };
 
 function render() {
-  for (i = 0; i <= boardSquares.length; i++) {
+  for (i = 0; i < boardSquares.length; i++) {
     if (squares[i].innerText === 'X'){
       boardSquares[i] = 1;
       squares[i].style.backgroundColor = "blue";
@@ -91,11 +91,10 @@ function getWinner() {
     array.forEach(function (element) {
       counter += boardSquares[element];
       if (Math.abs(counter) === 3) {
-        winner === boardSquares[element]
-        console.log(counter)
-      }
-      else {
-        
+        winner = boardSquares[element];
+      }else if(boardSquares.includes(null) === false && winner !== null) {
+        winner = 'T';
+      }else {
         return null;
       }
     })
