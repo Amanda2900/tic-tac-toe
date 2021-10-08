@@ -3,20 +3,22 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let boardSquares, squares, turnOrder, winner;
+let boardSquares, turnOrder, winner;
 
 
 /*------------------------ Cached Element References ------------------------*/
-const topLeft = document.querySelector(".top-left");
-const topCenter = document.querySelector(".top-center");
-const topRight = document.querySelector(".top-right");
-const centerLeft = document.querySelector(".center-left");
-const centerCenter = document.querySelector(".center-center");
-const centerRight = document.querySelector(".center-right");
-const bottomleft = document.querySelector(".bottom-left");
-const bottomCenter = document.querySelector(".bottom-center");
-const bottomRight = document.querySelector(".bottom-right");
+const topLeft = document.querySelector("#sq0");
+const topCenter = document.querySelector("#sq1");
+const topRight = document.querySelector("#sq2");
+const centerLeft = document.querySelector("#sq3");
+const centerCenter = document.querySelector("#sq4");
+const centerRight = document.querySelector("#sq5");
+const bottomleft = document.querySelector("#sq6");
+const bottomCenter = document.querySelector("#sq7");
+const bottomRight = document.querySelector("#sq8");
 const gameStatus = document.querySelector("#message");
+
+const squares = [...document.querySelectorAll('.square')].map((square) => square.innerText); //converts the static node list to an array of items
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -26,10 +28,8 @@ const gameStatus = document.querySelector("#message");
 /*-------------------------------- Functions --------------------------------*/
 init();
 
-squares = [topLeft.innerText, topCenter.innerText, topRight.innerText, centerLeft.innerText, centerCenter.innerText, centerRight.innerText, bottomleft.innerText, bottomCenter.innerText, bottomRight.innerText];
-
 function init() {
-  boardSquares = [null, null, null, null, null, null, null, null, null];
+  boardSquares = [null, null, null, null, null, null, null, null];
   turnOrder = 1; //1 is player X, -1 is player O
   winner = null; // will hold either 1, -1, or T for tie
 };
