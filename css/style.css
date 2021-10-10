@@ -12,6 +12,7 @@ body {
   display:inline-block;
   font-size: 60px;
   margin: 20px;
+  margin-top: 40px;
   border-radius: 2rem;
   padding: 0.4em;
   box-shadow: 0 0 .2rem rgb(255, 255, 255),
@@ -24,33 +25,30 @@ body {
 
 #message{
   color: white;
-  margin: 20px;
+  margin: 50px 0 20px 0;
 }
 
 section.board {
   display: grid;
   grid-template-rows: repeat(3, 10vmin);
   grid-template-columns: repeat(3, 10vmin);
-  grid-gap: 0vmin;
-}
-
-div {
-  border: 3px solid white;
-  color: navy;
-  font-size: 8vmin;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.board {
+  grid-gap: 1vmin;
   justify-content: center;
   margin: 40px;
 }
 
-button, div, h1{
-  color: rgb(244, 152, 249);
+div {
+  border: 3px solid rgb(250, 240, 250);
+  color: rgb(1, 1, 62);
+  font-size: 7.25vmin;
+  vertical-align: middle;
+  text-align: center;
+}
+
+button, div, h1, h2{
+  color: rgb(242, 176, 245);
   text-shadow:
-    0 0 7px rgb(255, 255, 255),
+    0 0 7px rgb(250, 240, 250),
     0 0 10px rgb(255, 255, 255),
     0 0 21px rgb(255, 255, 255),
     0 0 42px rgb(242, 0, 255),

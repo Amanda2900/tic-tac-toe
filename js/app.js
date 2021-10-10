@@ -40,10 +40,12 @@ function init() {
   // set winner to null
   winner = null; 
   // reset game message
-  gameStatus.innerText = "Let's play! X goes first";
+  gameStatus.innerText = "Let's play! X is first";
+  gameStatus.style.fontSize = '40px';
   // clear out the inner text from the squares and clears the color
   squares.forEach(element => element.innerText = '');
   squares.forEach(element => element.style.backgroundColor = '');
+  replayBtn.setAttribute("hidden", true);
   render();
 };
 
@@ -63,10 +65,14 @@ function render() {
     }
     // declare end of the game based on winner value
     if (winner !== null) {
-      gameStatus.innerText = (winner === 1) ? 'X has won the game!' : 'O has won the game!';
+      gameStatus.innerText = (winner === 1) ? 'X is the winner!' : 'O is the winner!';
+      gameStatus.style.fontSize = "80px";
+      replayBtn.removeAttribute("hidden");
     } 
     if (winner === 'T') {
-      gameStatus.innerText = 'The games ends in a tie!';
+      gameStatus.innerText = 'Tie game!';
+      gameStatus.style.fontSize = '80px';
+      replayBtn.removeAttribute("hidden");
     }
   };
 };
@@ -87,11 +93,11 @@ function handleClick(event) {
   // on turn order and change message
   if (boardSquares[i] === null && turnOrder === 1) {
     event.target.innerText = 'X';
-    gameStatus.innerText = "It is O's turn"
+    gameStatus.innerText = "O's turn"
   }
   if (boardSquares[i] === null && turnOrder === -1) {
     event.target.innerText = 'O';
-    gameStatus.innerText = "It is X's turn"
+    gameStatus.innerText = "X's turn"
   }
 
   // Update board index with the value of turn
