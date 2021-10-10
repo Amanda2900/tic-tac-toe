@@ -45,6 +45,7 @@ function init() {
   // clear out the inner text from the squares and clears the color
   squares.forEach(element => element.innerText = '');
   squares.forEach(element => element.style.backgroundColor = '');
+  // reset replay button as hidden
   replayBtn.setAttribute("hidden", true);
   render();
 };
@@ -64,6 +65,7 @@ function render() {
       boardSquares[i] = null;
     }
     // declare end of the game based on winner value
+    // reveal replay button
     if (winner !== null) {
       gameStatus.innerText = (winner === 1) ? 'X is the winner!' : 'O is the winner!';
       gameStatus.style.fontSize = "80px";
