@@ -35,7 +35,7 @@ function init() {
 
   // set array elements to null
   boardSquares = [null, null, null, null, null, null, null, null, null];
-  // set the turnOrder back to 1(X)
+  // set the turnOrder back to 1 (X)
   turnOrder = 1;
   // set winner to null
   winner = null; 
@@ -54,10 +54,10 @@ function render() {
   for (i = 0; i < boardSquares.length; i++) {
     if (squares[i].innerText === 'X'){
       boardSquares[i] = 1;
-      squares[i].style.backgroundColor = 'blue';
+      squares[i].style.backgroundColor = 'rgb(73, 7, 97)';
     } else if(squares[i].innerText === 'O') {
       boardSquares[i] = -1;
-      squares[i].style.backgroundColor = 'red';
+      squares[i].style.backgroundColor = 'rgb(9, 20, 222)';
     } else {
       boardSquares[i] = null;
     }
